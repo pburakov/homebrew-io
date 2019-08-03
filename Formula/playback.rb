@@ -2,9 +2,16 @@
 class Playback < Formula
   desc ""
   homepage ""
-  url "https://github.com/pburakov/playback/releases/download/v0.01-beta/playback_0.01-beta_Darwin_x86_64.tar.gz"
-  version "0.01-beta"
-  sha256 "93c4aa024e3c9f80b2d8a3adfaf13d25ba6dee9e6e6fddec195e15578f953331"
+  version "0.02-beta"
+  bottle :unneeded
+
+  if OS.mac?
+    url "https://github.com/pburakov/playback/releases/download/v0.02-beta/playback_0.02-beta_Darwin_x86_64.tar.gz"
+    sha256 "91e1d415075e93346d976b5fe3068e9791ddb40d2bda516f01277393571ca363"
+  elsif OS.linux?
+    url "https://github.com/pburakov/playback/releases/download/v0.02-beta/playback_0.02-beta_Linux_x86_64.tar.gz"
+    sha256 "f7b2d255386171ee4aae707eaac56ee9f97b77e15090ac3163e042302dfeb18e"
+  end
 
   def install
     bin.install "playback"
